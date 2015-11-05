@@ -1,0 +1,26 @@
+# Playbook to set up the slave nodes
+# First, Populate the hosts dictrionary by pinging the masters
+- hosts: tag_Name_master
+  remote_user: ec2-user
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Ping the master/s
+      ping:
+# Now it's time to actually set up the slaves
+# Install mesos, zookeeper, point zookeper to the master
+- hosts: tag_Name_slaves
+  remote_user: ec2-user
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Ping item
+      ping:
+    - name: install mesosphere yum repo
+      yum: name=http://repos.mesosphere.com/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm state=present
+    - name: install mesos packages
+      yum: pkg=device-mapper-event-libs,mesos state=latest
+    - name: update the mesos zk file to point to the master
+      template: src=./zk.j2 dest=/etc/mesos/zk
+    - name: start mesos-slave
+      service: name=mesos-slave state=started enabled=yes

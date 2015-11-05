@@ -1,0 +1,19 @@
+99.100.67.122 http://checkip.amazonaws.com/
+source ~/mesos-demo/ansible/hacking/env-setup -q
+isource the set_keys.sh
+iansible-playbook demo_create_hosts.yaml
+iansible-playbook demo_setup_master.yaml -i ec2.py --private-key=nate-oregon.pem
+iansible-playbook demo_setup_slave.yaml -i ec2.py --private-key=nate-oregon.pem
+
+5050 is mesos port
+8080 is marathon port
+4400 is the chronos port
+8888 python simplehttpserver
+# ansible all -i ec2.py -m ping --private-key=/home/nate/project/nate-oregon.pem -u ec2-user
+
+disable host key checking 
+
+
+  215  ansible tag_class_masters -i ec2.py -m ping --private-key=/home/nate/project/nate-oregon.pem -u ec2-user
+  217  ansible tag_Name_masters -i ec2.py -m ping --private-key=/home/nate/project/nate-oregon.pem -u ec2-user
+

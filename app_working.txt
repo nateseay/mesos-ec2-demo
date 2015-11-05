@@ -1,0 +1,57 @@
+{
+    "app": {
+        "acceptedResourceRoles": null,
+        "args": null,
+        "backoffFactor": 1.15,
+        "backoffSeconds": 1,
+        "cmd": "python -m SimpleHTTPServer 8888",
+        "constraints": [],
+        "container": null,
+        "cpus": 0.1,
+        "dependencies": [],
+        "deployments": [],
+        "disk": 0.0,
+        "env": {},
+        "executor": "",
+        "healthChecks": [],
+        "id": "/test",
+        "instances": 1,
+        "labels": {},
+        "maxLaunchDelaySeconds": 3600,
+        "mem": 16.0,
+        "ports": [
+            10000
+        ],
+        "requirePorts": false,
+        "storeUrls": [],
+        "tasks": [
+            {
+                "appId": "/test",
+                "host": "ip-172-31-27-112.us-west-2.compute.internal",
+                "id": "test.1a29bc09-836b-11e5-9ac0-0241c0a929fd",
+                "ports": [
+                    31135
+                ],
+                "slaveId": "c88b366a-f613-4916-bffc-7fb21cbd46f1-S2",
+                "stagedAt": "2015-11-05T03:12:52.835Z",
+                "startedAt": "2015-11-05T03:12:52.952Z",
+                "version": "2015-11-05T03:12:52.770Z"
+            }
+        ],
+        "tasksHealthy": 0,
+        "tasksRunning": 1,
+        "tasksStaged": 0,
+        "tasksUnhealthy": 0,
+        "upgradeStrategy": {
+            "maximumOverCapacity": 1.0,
+            "minimumHealthCapacity": 1.0
+        },
+        "uris": [],
+        "user": null,
+        "version": "2015-11-05T03:12:52.770Z",
+        "versionInfo": {
+            "lastConfigChangeAt": "2015-11-05T03:12:52.770Z",
+            "lastScalingAt": "2015-11-05T03:12:52.770Z"
+        }
+    }
+}

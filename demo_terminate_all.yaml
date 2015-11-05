@@ -1,0 +1,10 @@
+# Playbook to delete the EC2 instances, cleaning up the demo
+- name: delete anonymous instances
+  hosts: ec2
+  gather_facts: false
+  tasks:
+    - when: "True" 
+      local_action: ec2 state=absent
+                        instance_ids={{ ec2_id }}
+                        region='us-west-2'
+

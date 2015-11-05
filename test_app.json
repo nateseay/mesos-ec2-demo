@@ -1,0 +1,17 @@
+{
+    "cmd": "python -m SimpleHTTPServer 8888",
+    "constraints": [],
+    "container": null,
+    "cpus": 0.25,
+    "healthChecks": [],
+    "id": "test-python-server",
+    "instances": 3,
+    "mem": 50,
+    "ports": [
+        0
+    ],
+    "upgradeStrategy": {
+        "minimumHealthCapacity": 0.5,
+        "maximumOverCapacity": 0.5
+    }
+}

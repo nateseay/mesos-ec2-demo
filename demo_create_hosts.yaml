@@ -1,0 +1,35 @@
+# Playbook to create EC2 instances for the mesos cluster creation
+- hosts: localhost
+  connection: local
+  gather_facts: False
+
+  tasks:
+    - name: Provision the masters
+      ec2:
+         region: us-west-2
+         key_name: nate-oregon
+         group: nate_SG_oregon
+         instance_type: t2.micro
+         image: ami-4dbf9e7d
+         wait: true
+         exact_count: 1
+         count_tag:
+            Name: master
+         instance_tags:
+            Name: master
+      register: ec2masters
+
+    - name: Provision the slaves
+      ec2:
+         region: us-west-2
+         key_name: nate-oregon
+         group: nate_SG_oregon
+         instance_type: t2.micro
+         image: ami-4dbf9e7d
+         wait: true
+         exact_count: 2
+         count_tag:
+            Name: slaves
+         instance_tags:
+            Name: slaves
+      register: ec2slaves
