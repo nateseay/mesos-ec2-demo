@@ -1,3 +1,0 @@
-{% for master_host in groups['tag_Name_master'] %}
-zk://{{ hostvars[master_host]['ec2_private_ip_address'] }}:2181/mesos
-{% endfor %}
