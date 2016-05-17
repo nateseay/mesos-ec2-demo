@@ -6,7 +6,7 @@
     "healthChecks": [],
     "id": "test-python-server",
     "instances": 3,
-    "mem": 50,
+    "mem": 300,
     "ports": [
         0
     ],

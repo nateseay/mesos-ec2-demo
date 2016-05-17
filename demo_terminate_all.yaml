@@ -1,5 +1,5 @@
 # Playbook to delete the EC2 instances, cleaning up the demo
-- name: delete anonymous instances
+- name: delete all instances
   hosts: ec2
   gather_facts: false
   tasks:

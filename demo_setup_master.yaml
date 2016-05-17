@@ -13,7 +13,6 @@
       yum: name=http://archive.cloudera.com/cdh4/one-click-install/redhat/6/x86_64/cloudera-cdh-4-0.x86_64.rpm state=present
     - name: install zookeeper
       yum: pkg=zookeeper,zookeeper-server state=latest
-# TODO: AVOID IF ALREADY STARTED??? 
     - name: configure zookeeper ID
       become_user: zookeeper
       shell: zookeeper-server-initialize --myid=1
