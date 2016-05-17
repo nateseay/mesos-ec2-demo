@@ -7,7 +7,7 @@ How to Run
 This guide assumes you have an EC2 account set up...
 
 To run:
-cat 
+
 0. Install ansible
 0. Edit 01_setup.sh to point to ansbile when sourcing env_setup
 0. Create set_keys.sh (or just edit 01_setup.sh) to define the following environement variables:
